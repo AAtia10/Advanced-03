@@ -98,6 +98,40 @@
 
 
             #endregion
+
+
+            #region Exercise 3
+            Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+
+            phoneBook.Add("Ahmed", "01011111111");
+            phoneBook.Add("Sara", "01022222222");
+            phoneBook.Add("Ali", "01033333333");
+            phoneBook.Add("Mona", "01044444444");
+
+            phoneBook["Omar"] = "01055555555";
+
+            phoneBook["Ahmed"] = "01099999999";
+
+            try
+            {
+                phoneBook.Add("Ahmed", "01066666666");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Add Error: {ex.Message}");
+            }
+
+            Console.WriteLine(phoneBook.TryAdd("Ahmed", "01077777777"));
+
+            Console.WriteLine(phoneBook.ContainsKey("Yousef"));
+
+            Console.WriteLine(phoneBook.GetValueOrDefault("Yousef", "Not Found"));
+
+            Console.WriteLine(string.Join(", ", phoneBook.Keys));
+            Console.WriteLine(string.Join(", ", phoneBook.Values));
+
+
+            #endregion
         }
     }
 }
