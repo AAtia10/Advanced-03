@@ -172,6 +172,35 @@
 
 
             #endregion
+
+
+            #region Exercise 5
+            Queue<string> printerQueue = new Queue<string>();
+
+            printerQueue.Enqueue("Report.pdf");
+            printerQueue.Enqueue("Invoice.pdf");
+            printerQueue.Enqueue("Letter.docx");
+            printerQueue.Enqueue("Resume.pdf");
+            printerQueue.Enqueue("Photo.jpg");
+
+            foreach (var document in printerQueue)
+            {
+                Console.WriteLine(document);
+            }
+
+            Console.WriteLine($"Count: {printerQueue.Count}");
+            Console.WriteLine($"Next document: {printerQueue.Peek()}");
+
+            while (printerQueue.Count > 0)
+            {
+                string document = printerQueue.Dequeue();
+                Console.WriteLine($"Printing: {document}");
+            }
+
+            Console.WriteLine(printerQueue.TryDequeue(out string nextDocument) );
+
+
+            #endregion
         }
     }
 }
