@@ -132,6 +132,46 @@
 
 
             #endregion
+
+
+            #region Exercise 4
+
+            HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            emails.Add("ahmed@test.com");
+            emails.Add("AHMED@test.com");
+            emails.Add("sara@test.com");
+            emails.Add("Sara@Test.Com");
+
+            Console.WriteLine($"Emails Count: {emails.Count}");
+
+            HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+            HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
+
+            HashSet<int> unionSet = new HashSet<int>(setA);
+            unionSet.UnionWith(setB);
+
+            Console.WriteLine("Union: " + string.Join(", ", unionSet));
+
+
+
+            HashSet<int> intersectSet = new HashSet<int>(setA);
+            intersectSet.IntersectWith(setB);
+
+            Console.WriteLine("Intersection: " + string.Join(", ", intersectSet));
+
+            HashSet<int> exceptSet = new HashSet<int>(setA);
+            exceptSet.ExceptWith(setB);
+
+            Console.WriteLine("Except: " + string.Join(", ", exceptSet));
+
+            HashSet<int> subset = new HashSet<int> { 1, 2 };
+
+            Console.WriteLine(subset.IsSubsetOf(setA));
+
+
+
+            #endregion
         }
     }
 }
