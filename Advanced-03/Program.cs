@@ -56,6 +56,48 @@
             }
 
             #endregion
+
+
+            #region Exercise 2
+            SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>();
+
+            leaderboard.Add(500, "Ahmed");
+            leaderboard.Add(200, "Sara");
+            leaderboard.Add(800, "Ali");
+            leaderboard.Add(350, "Mona");
+
+            Console.WriteLine("\nLeaderboard:");
+            foreach (var player in leaderboard)
+            {
+                Console.WriteLine($"Score: {player.Key}, Name: {player.Value}");
+            }
+            Console.WriteLine($"\nFirst Key: {leaderboard.First().Key}");
+            Console.WriteLine($"First Value: {leaderboard.First().Value}");
+
+
+            Console.WriteLine(leaderboard.ContainsKey(500));
+
+            Console.WriteLine(leaderboard.GetValueOrDefault(999, "Player not found"));
+
+
+
+            leaderboard.Remove(200);
+
+            foreach (var player in leaderboard)
+            {
+                Console.WriteLine($"Score: {player.Key}, Name: {player.Value}");
+            }
+
+
+
+
+
+
+
+
+
+
+            #endregion
         }
     }
 }
